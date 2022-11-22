@@ -8,12 +8,14 @@ def sagasu(a):
         c.remove(d[i])
     return c
 
-a = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+a = ["A","B","C","D","E","F","G","H","I","J",
+"K","L","M","N","O","P","Q","R",
+    "S","T","U","V","W","X","Y","Z"]
 b = [i for i in range(len(a))]
 c = random.sample(a, random.choice(b))
 d = []
 
-print(f"対称文字:{c}")
+print(f"対称文字 :{c}")
 sagasu(a)
 print(f"欠損文字{d}")
 print(f"表示文字:{c}")
