@@ -17,7 +17,7 @@ d = []
 
 print(f"対称文字 :{c}")
 sagasu(a)
-print(f"欠損文字{d}")
+print(f"欠損文字:{d}")
 print(f"表示文字:{c}")
 
 input_a = int(input("欠損文字はいくつあるでしょうか？"))
