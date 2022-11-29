@@ -12,6 +12,10 @@ def button_click(event):
 root = tk.Tk()
 root.geometry("300x500")
 
+#Entryクラス(入力欄描画)
+entry = tk.Entry(root, width=10, font=(", 40"),justify="right")
+entry.grid(row=0, column=0, columnspan=3)
+
 #数字ボタン作成
 r, c = 1, 0
 for i in range(9, -1, -1):
