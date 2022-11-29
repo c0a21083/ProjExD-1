@@ -27,5 +27,9 @@ for i in range(9, -1, -1):
     if c % 3 == 0:
         r += 1
         c = 0
+button = tk.Button(root, text="+", width=4, height=2, font=("", "30"))
+button.grid(row= 4 , column = 1)
+button = tk.Button(root, text="=", width=4, height=2, font=("", "30"))
+button.grid(row= 4 , column = 2)
 
 root.mainloop()
