@@ -8,6 +8,12 @@ def button_click(event):
     num = btn["text"]
     tkm.showinfo("", f"{num}ボタンがクリックされました")
 
+#数字をクリック
+def number_click(event):
+    btn = event.widget
+    num = btn["text"]
+    entry.insert(tk.END,num)
+
 #ウィンドウ作成
 root = tk.Tk()
 root.geometry("300x500")
@@ -21,7 +27,8 @@ r, c = 1, 0
 for i in range(9, -1, -1):
     button = tk.Button(root, text=f"{i}", width=4, height=2,font=("", "30"))
     button.grid(row= r , column = c)
-    button.bind("<1>", button_click)
+    button.bind("<1>", number_click)
+    
     c += 1
 
     if c % 3 == 0:
