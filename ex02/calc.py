@@ -2,12 +2,6 @@ import tkinter as tk
 import tkinter.messagebox as tkm
 
 
-#ボタン警告
-def button_click(event):
-    btn = event.widget
-    num = btn["text"]
-    tkm.showinfo("", f"{num}ボタンがクリックされました")
-
 #deleteする
 def AC_click(event):
     entry.delete(0, tk.END)
