@@ -63,29 +63,29 @@ for i in num_list:
         r += 1
         c = 0
 
-button = tk.Button(root, text="=", width=4, height=2, font=("", "30"))
-button.grid(row= 4 , column = 3)
-button.bind("<1>", equal_click)
+button_1 = tk.Button(root, text="=", width=4, height=2, font=("", "30"))
+button_1.grid(row= 4 , column = 3)
+button_1.bind("<1>", equal_click)
 
-button = tk.Button(root, text="+", width=4, height=2, font=("", "30"))
-button.grid(row= 4 , column = 1)
-button.bind("<1>", plus_click)
+button_2 = tk.Button(root, text="+", width=4, height=2, font=("", "30"))
+button_2.grid(row= 4 , column = 1)
+button_2.bind("<1>", plus_click)
 
-button = tk.Button(root, text="-", width=4, height=2, font=("", "30"))
-button.grid(row= 4 , column = 2)
-button.bind("<1>", maina_click)
+button_3 = tk.Button(root, text="-", width=4, height=2, font=("", "30"))
+button_3.grid(row= 4 , column = 2)
+button_3.bind("<1>", maina_click)
 
-button = tk.Button(root, text="/", width=4, height=2, font=("", "30"))
-button.grid(row= 1 , column = 3)
-button.bind("<1>", warizan_click)
+button_4 = tk.Button(root, text="/", width=4, height=2, font=("", "30"))
+button_4.grid(row= 1 , column = 3)
+button_4.bind("<1>", warizan_click)
 
-button = tk.Button(root, text="*", width=4, height=2, font=("", "30"))
-button.grid(row= 2 , column = 3)
-button.bind("<1>", kakezan_click)
+button_5 = tk.Button(root, text="*", width=4, height=2, font=("", "30"))
+button_5.grid(row= 2 , column = 3)
+button_5.bind("<1>", kakezan_click)
 
-button = tk.Button(root, text="AC", width=4, height=2, font=("", "30"))
-button.grid(row= 3 , column = 3)
-button.bind("<1>", AC_click)
+button_6 = tk.Button(root, text="AC", width=4, height=2, font=("", "30"))
+button_6.grid(row= 3 , column = 3)
+button_6.bind("<1>", AC_click)
 
 
 root.mainloop()
