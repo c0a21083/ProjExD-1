@@ -1,6 +1,11 @@
 import tkinter as tk
 import tkinter.messagebox as tkm
 
+#練習5
+def key_down(event):
+    global key
+    key = event.keysym
+
 #練習1
 if __name__ == "__main__":
     root = tk.Tk()
@@ -15,7 +20,10 @@ if __name__ == "__main__":
     cx , cy = 300, 400
     tori = tk.PhotoImage(file="fig/6.png")
     canvas.create_image(cx, cy, image=tori, tag="tori")
-    root.mainloop()
 
     #練習4
     key = ""
+
+    root.bind("<KeyPress>", key_down)
+    root.mainloop()
+
