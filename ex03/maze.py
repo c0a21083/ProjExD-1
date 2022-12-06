@@ -10,4 +10,9 @@ if __name__ == "__main__":
     #練習2
     canvas = tk.Canvas(root, width=1500, height=900, bg = "black")
     canvas.pack()
+
+    #練習3
+    cx , cy = 300, 400
+    tori = tk.PhotoImage(file="fig/6.png")
+    canvas.create_image(cx, cy, image=tori, tag="tori")
     root.mainloop()
