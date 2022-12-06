@@ -20,16 +20,28 @@ def main_proc(event):
     key = event.keysym
     if key == "Up":
         my -= 1
-        cy = my*100 + 50
+        if canv_lst[mx][my] == 0:
+            cy = my*100 + 50
+        else:
+            my += 1
     elif key == "Left":
         mx -= 1
-        cx = mx*100 + 50
+        if canv_lst[mx][my] == 0:
+            cx = mx*100 + 50
+        else:
+            mx += 1
     elif key == "Right":
         mx += 1
-        cx = mx*100 + 50
+        if canv_lst[mx][my] == 0:
+            cx = mx*100 + 50
+        else:
+            mx -= 1
     elif key == "Down":
         my += 1
-        cy = my*100 + 50
+        if canv_lst[mx][my] == 0:
+            cy = my*100 + 50
+        else:
+            my -= 1
 
     canvas.coords("tori", cx, cy)
 
