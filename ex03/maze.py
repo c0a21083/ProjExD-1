@@ -4,11 +4,6 @@ import tkinter.messagebox as tkm
 #練習8
 import maze_maker as mz_m
 
-#練習6
-def key_up(event):
-    global key
-    key = ""
-
 #ゴールにかかった時間を計測する関数
 def count_up():
     global tmr, jid
