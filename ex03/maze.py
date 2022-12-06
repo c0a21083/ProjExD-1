@@ -4,20 +4,6 @@ import tkinter.messagebox as tkm
 #練習8
 import maze_maker as mz_m
 
-#練習7
-def main_proc(event):
-    global cx, cy, key
-    key = event.keysym
-    if key == "Up":
-        cy -= 20
-    elif key == "Left":
-        cx -= 20
-    elif key == "Right":
-        cx += 20
-    elif key == "Down":
-        cy += 20
-    canvas.coords("tori", cx, cy)
-
 #練習5
 def key_down(event):
     global key
@@ -28,18 +14,23 @@ def key_up(event):
     global key
     key = ""
 
-#練習7
+#練習7 and 練習11
 def main_proc(event):
-    global cx, cy, key
+    global mx, my, cx, cy, key
     key = event.keysym
     if key == "Up":
-        cy -= 20
+        my -= 1
+        cy = my*100 + 50
     elif key == "Left":
-        cx -= 20
+        mx -= 1
+        cx = mx*100 + 50
     elif key == "Right":
-        cx += 20
+        mx += 1
+        cx = mx*100 + 50
     elif key == "Down":
-        cy += 20
+        my += 1
+        cy = my*100 + 50
+
     canvas.coords("tori", cx, cy)
 
 if __name__ == "__main__":
@@ -60,6 +51,7 @@ if __name__ == "__main__":
 
     #練習3
     cx , cy = 150, 150
+    mx, my = 1, 1
     tori = tk.PhotoImage(file="fig/6.png")
     canvas.create_image(cx, cy, image=tori, tag="tori")
 
