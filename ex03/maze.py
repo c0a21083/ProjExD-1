@@ -4,6 +4,20 @@ import tkinter.messagebox as tkm
 #練習8
 import maze_maker as mz_m
 
+#練習7
+def main_proc(event):
+    global cx, cy, key
+    key = event.keysym
+    if key == "Up":
+        cy -= 20
+    elif key == "Left":
+        cx -= 20
+    elif key == "Right":
+        cx += 20
+    elif key == "Down":
+        cy += 20
+    canvas.coords("tori", cx, cy)
+
 #練習5
 def key_down(event):
     global key
@@ -35,14 +49,17 @@ if __name__ == "__main__":
     root.geometry("1500x900")
     
     #練習9
-    mz_m.make_maze(15, 9)
+    canv_lst = mz_m.make_maze(15, 9)
 
     #練習2
     canvas = tk.Canvas(root, width=1500, height=900, bg = "black")
     canvas.pack()
 
+    #練習10
+    mz_m.show_maze(canvas, canv_lst)
+
     #練習3
-    cx , cy = 300, 400
+    cx , cy = 150, 150
     tori = tk.PhotoImage(file="fig/6.png")
     canvas.create_image(cx, cy, image=tori, tag="tori")
 
@@ -52,4 +69,5 @@ if __name__ == "__main__":
 root.bind("<KeyPress>", key_down)
 root.bind("<KeyRelease>", key_up)
 root.bind("<KeyPress>", main_proc)
+
 root.mainloop()
