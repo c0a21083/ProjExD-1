@@ -11,8 +11,22 @@ def key_up(event):
     global key
     key = ""
 
-#練習1
+#練習7
+def main_proc(event):
+    global cx, cy, key
+    key = event.keysym
+    if key == "Up":
+        cy -= 20
+    elif key == "Left":
+        cx -= 20
+    elif key == "Right":
+        cx += 20
+    elif key == "Down":
+        cy += 20
+    canvas.coords("tori", cx, cy)
+
 if __name__ == "__main__":
+    #練習1
     root = tk.Tk()
     root.title("迷えるこうかとん")
     root.geometry("1500x900")
@@ -31,4 +45,5 @@ if __name__ == "__main__":
 
 root.bind("<KeyPress>", key_down)
 root.bind("<KeyRelease>", key_up)
+root.bind("<KeyPress>", main_proc)
 root.mainloop()
