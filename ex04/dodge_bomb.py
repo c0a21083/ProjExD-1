@@ -61,11 +61,11 @@ def main():
             if event.type == pg.QUIT: return
 
         # 練習4
-        #key_states = pg.key.get_pressed() # 辞書
-        #if key_states[pg.K_UP]    == True: kkimg_rct.centery -= 3
-        #if key_states[pg.K_DOWN]  == True: kkimg_rct.centery += 3
-        #if key_states[pg.K_LEFT]  == True: kkimg_rct.centerx -= 3
-        #if key_states[pg.K_RIGHT] == True: kkimg_rct.centerx += 3
+        key_states = pg.key.get_pressed() # 辞書
+        if key_states[pg.K_UP]    == True: kkimg_rct.centery -= 3
+        if key_states[pg.K_DOWN]  == True: kkimg_rct.centery += 3
+        if key_states[pg.K_LEFT]  == True: kkimg_rct.centerx -= 3
+        if key_states[pg.K_RIGHT] == True: kkimg_rct.centerx += 3
 
         # 練習7
         #if check_bound(kkimg_rct, screen_rct) != (1, 1): # 領域外だったら
