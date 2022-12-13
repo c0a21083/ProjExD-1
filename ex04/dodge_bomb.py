@@ -32,13 +32,13 @@ def main():
     #gameov_rct.center = (500, 300)
  
     #追加：爆弾を画像に変更
-    #bm1size = random.randint(100, 300)
-    #bmimg_sfc = pg.image.load("fig/bomb.png") # Surface
-    #bmimg_sfc = pg.transform.scale(bmimg_sfc, (bm1size, bm1size)) #Surface
-    #bmimg_rct = bmimg_sfc.get_rect() # Rect
-    ##bmimg_rct.centerx = random.randint(0, screen_rct.width)
-    #bmimg_rct.centery = random.randint(0, screen_rct.height)
-    #vx, vy = +1, +1 # 練習6
+    bm1size = random.randint(100, 300)
+    bmimg_sfc = pg.image.load("fig/bomb.png") # Surface
+    bmimg_sfc = pg.transform.scale(bmimg_sfc, (bm1size, bm1size)) #Surface
+    bmimg_rct = bmimg_sfc.get_rect() # Rect
+    bmimg_rct.centerx = random.randint(0, screen_rct.width)
+    bmimg_rct.centery = random.randint(0, screen_rct.height)
+    vx, vy = +1, +1 # 練習6
 
     #追加：爆弾を1つ追加
     #bm2size = random.randint(100, 300)
@@ -86,7 +86,7 @@ def main():
         #bmimg2_rct.move_ip(vx2, vy2)
 
         # 練習5
-        #screen_sfc.blit(bmimg_sfc, bmimg_rct)
+        screen_sfc.blit(bmimg_sfc, bmimg_rct)
         #screen_sfc.blit(bmimg2_sfc, bmimg2_rct)
         # 練習7
         #yoko, tate = check_bound(bmimg_rct, screen_rct)
