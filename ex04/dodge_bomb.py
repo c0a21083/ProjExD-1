@@ -22,9 +22,6 @@ def main():
     count = 0 #爆弾にあたっている時間を計測
     clock = pg.time.Clock()
 
-    font = pg.font.SysFont("hg正楷書体pro", 50)
-    text = font.render(f"{count}", True, (255,0,0))
-
     # 練習1：スクリーンと背景画像
     pg.display.set_caption("逃げろ！こうかとん")
     screen_sfc = pg.display.set_mode((1600, 900)) # Surface
@@ -32,6 +29,7 @@ def main():
     bgimg_sfc = pg.image.load("fig/pg_bg.jpg")    # Surface
     bgimg_rct = bgimg_sfc.get_rect()              # Rect
     screen_sfc.blit(bgimg_sfc, bgimg_rct)
+
 
     # 練習3：こうかとん
     kkimg_sfc = pg.image.load("fig/6.png")    # Surface
@@ -64,7 +62,6 @@ def main():
 
     while True:
         screen_sfc.blit(bgimg_sfc, bgimg_rct)
-        screen_sfc.blit(text, 10, 50)
 
         # 練習8
         if kkimg_rct.colliderect(bmimg_rct): 
