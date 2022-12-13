@@ -68,12 +68,12 @@ def main():
         if key_states[pg.K_RIGHT] == True: kkimg_rct.centerx += 3
 
         # 練習7
-        #if check_bound(kkimg_rct, screen_rct) != (1, 1): # 領域外だったら
-        #    if key_states[pg.K_UP]    == True: kkimg_rct.centery += 3
-        #    if key_states[pg.K_DOWN]  == True: kkimg_rct.centery -= 3
-        #    if key_states[pg.K_LEFT]  == True: kkimg_rct.centerx += 3
-        #    if key_states[pg.K_RIGHT] == True: kkimg_rct.centerx -= 3
-        #screen_sfc.blit(kkimg_sfc, kkimg_rct)
+        if check_bound(kkimg_rct, screen_rct) != (1, 1): # 領域外だったら
+            if key_states[pg.K_UP]    == True: kkimg_rct.centery += 3
+            if key_states[pg.K_DOWN]  == True: kkimg_rct.centery -= 3
+            if key_states[pg.K_LEFT]  == True: kkimg_rct.centerx += 3
+            if key_states[pg.K_RIGHT] == True: kkimg_rct.centerx -= 3
+        screen_sfc.blit(kkimg_sfc, kkimg_rct)
 
         # 練習8
         #if kkimg_rct.colliderect(bmimg_rct): 
@@ -101,7 +101,7 @@ def main():
 
 
 # 練習7
-#def check_bound(rct, scr_rct):
+def check_bound(rct, scr_rct):
     '''
     [1] rct: こうかとん or 爆弾のRect
     [2] scr_rct: スクリーンのRect
