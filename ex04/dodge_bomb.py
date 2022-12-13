@@ -12,10 +12,14 @@ def check_bound(rct, scr_rct):
     yoko, tate = +1, +1 # 領域
     yoko2, tate2 = +1, +1
 
-    if rct.left < scr_rct.left or scr_rct.right  < rct.right : yoko = -1 # 領域外
-    if rct.top  < scr_rct.top  or scr_rct.bottom < rct.bottom: tate = -1 # 領域外
-    if rct.left < scr_rct.left or scr_rct.right  < rct.right : yoko2 = -1 # 領域外
-    if rct.top  < scr_rct.top  or scr_rct.bottom < rct.bottom: tate2 = -1 # 領域外
+    if rct.left < scr_rct.left or scr_rct.right  < rct.right : 
+        yoko = -1 # 領域外
+    if rct.top  < scr_rct.top  or scr_rct.bottom < rct.bottom: 
+        tate = -1 # 領域外
+    if rct.left < scr_rct.left or scr_rct.right  < rct.right : 
+        yoko2 = -1 # 領域外
+    if rct.top  < scr_rct.top  or scr_rct.bottom < rct.bottom: 
+        tate2 = -1 # 領域外
     return yoko, tate
 
 def main():
@@ -82,17 +86,25 @@ def main():
 
         # 練習4
         key_states = pg.key.get_pressed() # 辞書
-        if key_states[pg.K_UP]    == True: kkimg_rct.centery -= 3
-        if key_states[pg.K_DOWN]  == True: kkimg_rct.centery += 3
-        if key_states[pg.K_LEFT]  == True: kkimg_rct.centerx -= 3
-        if key_states[pg.K_RIGHT] == True: kkimg_rct.centerx += 3
+        if key_states[pg.K_UP]    == True: 
+            kkimg_rct.centery -= 3
+        if key_states[pg.K_DOWN]  == True: 
+            kkimg_rct.centery += 3
+        if key_states[pg.K_LEFT]  == True: 
+            kkimg_rct.centerx -= 3
+        if key_states[pg.K_RIGHT] == True: 
+            kkimg_rct.centerx += 3
         
         # 練習7
         if check_bound(kkimg_rct, screen_rct) != (1, 1): # 領域外だったら
-            if key_states[pg.K_UP]    == True: kkimg_rct.centery += 3
-            if key_states[pg.K_DOWN]  == True: kkimg_rct.centery -= 3
-            if key_states[pg.K_LEFT]  == True: kkimg_rct.centerx += 3
-            if key_states[pg.K_RIGHT] == True: kkimg_rct.centerx -= 3
+            if key_states[pg.K_UP]    == True: 
+                kkimg_rct.centery += 3
+            if key_states[pg.K_DOWN]  == True: 
+                kkimg_rct.centery -= 3
+            if key_states[pg.K_LEFT]  == True: 
+                kkimg_rct.centerx += 3
+            if key_states[pg.K_RIGHT] == True: 
+                kkimg_rct.centerx -= 3
         screen_sfc.blit(kkimg_sfc, kkimg_rct)
 
         #爆弾の速度上昇
