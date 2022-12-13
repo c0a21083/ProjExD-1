@@ -76,8 +76,9 @@ def main():
         screen_sfc.blit(kkimg_sfc, kkimg_rct)
 
         # 練習8
-        #if kkimg_rct.colliderect(bmimg_rct): 
-        #    screen_sfc.blit(gameov_sfc, gameov_rct)
+        if kkimg_rct.colliderect(bmimg_rct): 
+            return
+            #screen_sfc.blit(gameov_sfc, gameov_rct)
         #if kkimg_rct.colliderect(bmimg2_rct):
         #   screen_sfc.blit(gameov_sfc, gameov_rct)
 
@@ -89,9 +90,9 @@ def main():
         screen_sfc.blit(bmimg_sfc, bmimg_rct)
         #screen_sfc.blit(bmimg2_sfc, bmimg2_rct)
         # 練習7
-        #yoko, tate = check_bound(bmimg_rct, screen_rct)
-        #vx *= yoko
-        #vy *= tate
+        yoko, tate = check_bound(bmimg_rct, screen_rct)
+        vx *= yoko
+        vy *= tate
         #yoko2, tate2 = check_bound(bmimg2_rct, screen_rct)
         #vx2 *= yoko2
         #vy2 *= tate2
