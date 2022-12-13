@@ -27,7 +27,7 @@ def main():
     clock = pg.time.Clock()
 
     # 練習1：スクリーンと背景画像
-    pg.display.set_caption("逃げろ！こうかとん")
+    screen = pg.display.set_caption("逃げろ！こうかとん")
     screen_sfc = pg.display.set_mode((1600, 900)) # Surface
     screen_rct = screen_sfc.get_rect()            # Rect
     bgimg_sfc = pg.image.load("fig/pg_bg.jpg")    # Surface
@@ -67,18 +67,22 @@ def main():
     while True:
         screen_sfc.blit(bgimg_sfc, bgimg_rct)
 
+        font = pg.font.SysFont(None, 100)
+        text = font.render(f"{int(count)}count", True, (255,0,0))
+        screen_sfc.blit(text, (30, 30))
+
+        #countが11に達したら終了
+        if count >= 11:
+            return
+
         # 練習8
         if kkimg_rct.colliderect(bmimg_rct): 
             screen_sfc.blit(gameov_sfc, gameov_rct)
-            count += 1
+            count += 0.05
             
         if kkimg_rct.colliderect(bmimg2_rct):
             screen_sfc.blit(gameov_sfc, gameov_rct)
-            count += 1
-        
-        #countが1000に達したら終了
-        if count == 1000:
-            return
+            count += 0.05
 
         # 練習2
         for event in pg.event.get():
