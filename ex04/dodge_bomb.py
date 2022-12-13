@@ -82,7 +82,7 @@ def main():
         #   screen_sfc.blit(gameov_sfc, gameov_rct)
 
         # 練習6
-        #bmimg_rct.move_ip(vx, vy)
+        bmimg_rct.move_ip(vx, vy)
         #bmimg2_rct.move_ip(vx2, vy2)
 
         # 練習5
@@ -96,8 +96,8 @@ def main():
         #vx2 *= yoko2
         #vy2 *= tate2
 
-        #pg.display.update()
-        #clock.tick(1000)
+        pg.display.update()
+        clock.tick(1000)
 
 
 # 練習7
