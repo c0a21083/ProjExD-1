@@ -16,10 +16,10 @@ def main():
 
 
     # 練習3：こうかとん
-    #kkimg_sfc = pg.image.load("fig/6.png")    # Surface
-    #kkimg_sfc = pg.transform.rotozoom(kkimg_sfc, 0, 2.0)  # Surface
-    #kkimg_rct = kkimg_sfc.get_rect()          # Rect
-    #kkimg_rct.center = 900, 400
+    kkimg_sfc = pg.image.load("fig/6.png")    # Surface
+    kkimg_sfc = pg.transform.rotozoom(kkimg_sfc, 0, 2.0)  # Surface
+    kkimg_rct = kkimg_sfc.get_rect()          # Rect
+    kkimg_rct.center = 900, 400
 
     # startボタン作成
     #button = pg.Rect(1600/2+200, 600, 200, 100)
