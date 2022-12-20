@@ -318,7 +318,7 @@ def main(winstyle=0):
         if SCENE == 0: # タイトル画面
             screen.blit(background, (0,0))
             draw_text(screen, 320, 200, "Shooting Game", 100, "black")
-            draw_text(screen, 340, 350, "S KEY START!!", 50, "red")
+            draw_text(screen, 340, 350, "S KEY START!!", 50, "blue")
             if keystate[pg.K_s] == 1:
                 SCENE = 1
                 screen.blit(background, (0,0))
