@@ -1,28 +1,3 @@
-#!/usr/bin/env python
-""" pygame.examples.aliens
-
-Shows a mini game where you have to defend against aliens.
-
-What does it show you about pygame?
-
-* pg.sprite, the difference between Sprite and Group.
-* dirty rectangle optimization for processing for speed.
-* music with pg.mixer.music, including fadeout
-* sound effects with pg.Sound
-* event processing, keyboard handling, QUIT handling.
-* a main loop frame limited with a game clock from pg.time.Clock
-* fullscreen switching.
-
-
-Controls
---------
-
-* Left and right arrows to move.
-* Space bar to shoot
-* f key to toggle between fullscreen.
-
-"""
-
 import random
 import os
 
@@ -76,13 +51,6 @@ def draw_text(screen,x,y,text,size,col):#文字表示の関数
     x = x - s.get_width()/2
     y = y - s.get_height()/2
     screen.blit(s,[x,y])
-
-# Each type of game object gets an init and an update function.
-# The update function is called once per frame, and it is when each object should
-# change its current position and state.
-#
-# The Player object actually gets a "move" function instead of update,
-# since it is passed extra information about the keyboard.
 
 
 class Player(pg.sprite.Sprite):
@@ -157,13 +125,6 @@ class Explosion(pg.sprite.Sprite):
         self.life = self.defaultlife
 
     def update(self):
-        """called every time around the game loop.
-
-        Show the explosion surface for 'defaultlife'.
-        Every game tick(update), we decrease the 'life'.
-
-        Also we animate the explosion.
-        """
         self.life = self.life - 1
         self.image = self.images[self.life // self.animcycle % 2]
         if self.life <= 0:
@@ -171,7 +132,6 @@ class Explosion(pg.sprite.Sprite):
 
 
 class Shot(pg.sprite.Sprite):
-    """a bullet the Player sprite fires."""
 
     speed = -11
     images = []
@@ -182,17 +142,11 @@ class Shot(pg.sprite.Sprite):
         self.rect = self.image.get_rect(midbottom=pos)
 
     def update(self):
-        """called every time around the game loop.
-
-        Every tick we move the shot upwards.
-        """
         self.rect.move_ip(0, self.speed)
         if self.rect.top <= 0:
             self.kill()
 
 class ChargeShot(pg.sprite.Sprite):
-    """a bullet the Player sprite fires."""
-
     speed = -20
     images = []
 
@@ -202,18 +156,12 @@ class ChargeShot(pg.sprite.Sprite):
         self.rect = self.image.get_rect(midbottom=pos)
 
     def update(self):
-        """called every time around the game loop.
-
-        Every tick we move the shot upwards.
-        """
         self.rect.move_ip(0, self.speed)
         if self.rect.top <= 0:
             self.kill()        
 
 
 class Bomb(pg.sprite.Sprite):
-    """A bomb the aliens drop."""
-
     speed = 9
     images = []
 
@@ -223,14 +171,6 @@ class Bomb(pg.sprite.Sprite):
         self.rect = self.image.get_rect(midbottom=alien.rect.move(0, 5).midbottom)
 
     def update(self):
-        """called every time around the game loop.
-
-        Every frame we move the sprite 'rect' down.
-        When it reaches the bottom we:
-
-        - make an explosion.
-        - remove the Bomb.
-        """
         self.rect.move_ip(0, self.speed)
         if self.rect.bottom >= 470:
             Explosion(self)
@@ -238,8 +178,6 @@ class Bomb(pg.sprite.Sprite):
 
 
 class Score(pg.sprite.Sprite):
-    """to keep track of the score."""
-
     def __init__(self):
         pg.sprite.Sprite.__init__(self)
         self.font = pg.font.Font(None, 20)
@@ -250,7 +188,6 @@ class Score(pg.sprite.Sprite):
         self.rect = self.image.get_rect().move(10, 450)
 
     def update(self):
-        """We only update the score in update() when it has changed."""
         if SCORE != self.lastscore:
             self.lastscore = SCORE
             msg = "Score: %d" % SCORE
