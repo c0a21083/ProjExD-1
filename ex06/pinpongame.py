@@ -202,13 +202,13 @@ def main():
         screen.blit(text, (30, 20))
 
         # C0A21055 どちらかの得点が3になったら終了
-        if score1 == 3:
+        if score1 == 2:
             score_text = score_font.render("WIN", True, (255,0,0))
             screen.blit(score_text, (250, 220))
             pg.display.flip()
             pg.time.wait(2000)
             return
-        elif score2 == 3:
+        elif score2 == 2:
             score_text = score_font.render("LOSE", True, (255,0,0))
             screen.blit(score_text, (230, 220))
             pg.display.flip()
