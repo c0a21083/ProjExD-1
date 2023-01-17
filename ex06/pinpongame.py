@@ -1,12 +1,12 @@
 # -*- coding:utf-8 -*-
 import pygame as pg
-from pg.locals import *
+from pygame.locals import *
 import sys
 
 #C0A21083効果音機能
 pg.mixer.init()
-sound_reflect = pg.mixer.Sound("反射.ogg")
-sound_explosion = pg.mixer.Sound("爆発.ogg")
+sound_reflect = pg.mixer.Sound("./ex06/反射.ogg")
+sound_explosion = pg.mixer.Sound("./ex06/爆発.ogg")
 # ボールの動きを計算
 def calc_ball(ball_x, ball_y, ball_vx, ball_vy, bar1_x, bar1_y, bar2_x, bar2_y, wall1_x, wall1_y, wall2_x, wall2_y):
         if ball_x <= bar1_x + 10.:  # プレイヤーのバーに当たったら跳ね返る
@@ -192,7 +192,7 @@ def main():
         counter += 1
         if counter % 30 == 0:
             timer += 1
-        if timer > 50:
+        if timer > 20:
             stop_text = stop_font.render("TIME OVER", True, (0,0,255))
             screen.blit(stop_text, (130, 220))
             pg.display.flip()
