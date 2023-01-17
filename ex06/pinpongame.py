@@ -168,6 +168,7 @@ def main():
         # 各オブジェクトの描画
         screen.blit(background,(0,0))
         pg.draw.aaline(screen,(255,255,255),(330,5),(330,475))  # 中央線の描画
+        pg.draw.ellipse(screen, (255, 255,255), (280, 180, 100, 100), 5) # C0A21143 中央にサークルの描画
         screen.blit(bar1,(bar1_x,bar1_y))                           # プレイヤー側バーの描画
         screen.blit(bar2,(bar2_x,bar2_y))                           # CPU側バーの描画
         screen.blit(ball,(ball_x, ball_y))                          # ボールの描画
